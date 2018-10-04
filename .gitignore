@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.idea/
+*.sh
+
+# env settings
+config/*
+config.js
