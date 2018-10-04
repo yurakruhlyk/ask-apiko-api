@@ -11,7 +11,7 @@ const list = ({ Question }) => async (req, res, next) => {
     
 		if (search) query.title = new RegExp(search, 'i');
 
-		const count = await Question.find({}).countDocuments();
+		const count = await Question.find(query).countDocuments();
 		const questions = await Question.find(query)
 			.skip(skip)
 			.limit(limit)
