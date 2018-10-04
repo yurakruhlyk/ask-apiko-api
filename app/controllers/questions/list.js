@@ -9,9 +9,7 @@ const list = ({ Question }) => async (req, res, next) => {
 		const query = {};
 		const sortQuery = sort || { createdAt: 1 };
     
-		if(search) {
-			Object.assign(query, { title: new RegExp(`${search}`, 'i') });
-		}
+		if (search) query.title = new RegExp(search, 'i');
 
 		const count = await Question.find({}).countDocuments();
 		const questions = await Question.find(query)
